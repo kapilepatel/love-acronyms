@@ -1,0 +1,46 @@
+{
+    "manifest_version": 3,
+    "name": "Acronym Expander",
+    "version": "1.0",
+    "description": "Automatically expands acronyms on webpages",
+    "permissions": [
+        "activeTab",
+        "storage"
+    ],
+    "content_scripts": [
+        {
+            "matches": [
+                "<all_urls>"
+            ],
+            "js": [
+                "content.js"
+            ]
+        }
+    ],
+    "web_accessible_resources": [
+        {
+            "resources": [
+                "acronyms.json"
+            ],
+            "matches": [
+                "<all_urls>"
+            ]
+        }
+    ],
+    "background": {
+        "service_worker": "background.js"
+    },
+    "action": {
+        "default_popup": "popup.html",
+        "default_icon": {
+            "16": "images/iykyk-16.jpg",
+            "48": "images/iykyk-48.jpg",
+            "128": "images/iykyk-128.jpg"
+        }
+    },
+    "icons": {
+        "16": "images/iykyk-16.jpg",
+        "48": "images/iykyk-48.jpg",
+        "128": "images/iykyk-128.jpg"
+    }
+}
